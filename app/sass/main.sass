@@ -1,0 +1,718 @@
+$font: 'Roboto', sans-serif
+// $font-logo: 'Bebas Neue', sans-serif
+$time: .3s ease
+$zindexwrap: 2
+
+$gradienth1black: linear-gradient(to right,transparent 0%,transparent 20%,#000 40%,#000 60%,transparent 80%,transparent 100%)
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+
+
+
++keyframes(progress)
+	0%
+		width: 0
+	to
+		width: 100%
+
+
+*
+	margin: 0
+	padding: 0
+	-webkit-box-sizing: border-box
+	box-sizing: border-box
+	background-position: center
+	background-repeat: no-repeat
+
+*, *:after, *:before
+	box-sizing: border-box
+	margin: 0
+	padding: 0
+
+h1,h2,h3,h4,h5 
+	font-weight: inherit
+	font-family: $font
+	margin: 0
+	line-height: 1
+
+html 
+	position: relative
+	line-height: 1
+	font-size: 10px
+	transition: $time
+	&.adminbg
+		height: 100%
+	
+
+
+body 
+	font-family: $font
+	font-weight: 300
+	font-size: 1.3rem
+	background-color: #fff
+	color: #222
+	width: 100%
+	position: relative
+	// overflow: hidden
+	-webkit-tap-highlight-color: rgba(0,0,0,0)
+	&.compensate-for-scrollbar
+		overflow: auto
+		margin-right: inherit
+a 
+	text-decoration: none
+	color: inherit
+	outline: none
+	&:hover, &:focus
+		color: inherit
+		text-decoration: none
+
+p
+	margin-bottom: 0
+
+img
+	display: block
+
+button,input,textarea 
+	outline: none
+	border-radius: 0
+	&:hover, &:focus
+		outline: none
+		box-shadow: none
+
+section,footer,header 
+	width: 100%
+	position: relative
+	// overflow: hidden
+
+
+
+.wrapper
+	max-width: 100%
+	min-width: 30rem
+	width: 100%
+	position: relative
+	z-index: 2
+	padding: 0 0
+	height: 100%
+	margin: 0 auto
+
+.link
+	transition: opacity 300ms cubic-bezier(.694,0,.335,1),color 300ms cubic-bezier(.694,0,.335,1),background-color 300ms cubic-bezier(.694,0,.335,1),border-color 300ms cubic-bezier(.694,0,.335,1)
+	&--change
+		padding-bottom: .5rem
+		position: relative
+		&:after
+			opacity: 1
+			transition: transform 625ms 625ms cubic-bezier(.694,0,.335,1), opacity 625ms 625ms cubic-bezier(.694,0,.335,1), background 0ms 1250ms step-end
+			position: absolute
+			top: 100%
+			right: 1rem
+			background: #000
+			content: ''
+			width: 100%
+			height: .1rem
+
+	&--small
+		padding: 1.3em 0
+		background: transparent
+		font-weight: 500
+		color: #000
+		font-size: 1.1rem
+		display: block
+		line-height: 1.1rem
+		letter-spacing: .2rem
+		text-transform: uppercase
+		white-space: nowrap
+		&:hover
+			opacity: .8
+		&.is
+			&--dropdown
+				& svg
+					width: 1rem
+					height: .8rem
+					stroke-width: .3rem
+					display: inline-block
+					margin-left: .2rem
+					fill: none
+					stroke: #000
+					transition: transform 300ms cubic-bezier(.694,0,.335,1),stroke 300ms cubic-bezier(.694,0,.335,1),-webkit-transform 300ms cubic-bezier(.694,0,.335,1)
+	&-nav
+		display: block
+		width: 100%
+		font-size: 1.2rem
+		line-height: 2.1rem
+		color: #888
+
+		&:hover
+			color: #333
+	&--logo
+		display: inline-block
+		& svg
+			transition: fill 300ms cubic-bezier(.694,0,.335,1)
+			display: block
+			width: 3rem
+			height: 2.5rem
+		&.is
+			
+			&--full
+				& svg
+					fill: #fff
+					width: 16.8rem
+			&--fill
+				& svg
+					fill: #000
+
+
+	&-dropdown
+		margin-top: 4rem
+		display: flex
+		flex-direction: row
+		align-items: center
+		justify-content: space-between
+		text-align: left
+		color: #666
+		font-size: 1rem
+		padding: 1.25rem
+		width: 100%
+		max-width: 11rem
+		background: transparent
+		border: .1rem solid #e5e5e5
+		& svg
+			display: block
+			width: .55rem
+		& + &
+			margin-top: 1rem
+
+
+
+.btn
+	border-radius: 0
+	outline: none
+	cursor: pointer
+	font-family: $font
+	font-size: 1.4rem
+	transition: opacity 300ms cubic-bezier(.694,0,.335,1), background-color 300ms cubic-bezier(.694,0,.335,1), color 300ms cubic-bezier(.694,0,.335,1)
+	border: none
+	line-height: 1.1rem
+	text-align: center
+	font-weight: 500
+	letter-spacing: .091em
+	text-rendering: optimizeLegibility
+	text-transform: uppercase
+	-webkit-font-smoothing: antialiased
+	appearance: none
+	&:hover, &:focus
+		outline: none
+		box-shadow: none
+	&--detail
+		font-size: 1.1rem
+		background: transparent
+		color: #0a0909
+		padding: .8em 0
+		border: .11rem solid transparent
+		border-color: transparent transparent rgba(0,0,0,.3) transparent
+		&.is--left
+			margin-left: 3.6rem
+		&:hover
+			opacity: 0.8
+	&--section
+		font-size: 1.1rem
+		display: inline-block
+		padding: 1.8em 3.6em
+		
+		color: #fff
+		background: rgba(0,0,0, 1)
+		letter-spacing: .2rem
+		text-transform: uppercase
+		&:hover
+			opacity: .8
+	&--white
+		justify-self: flex-end
+		background: transparent
+		color: #000
+		border: .11rem solid #000
+		&:hover
+			opacity: 1
+			color: #fff
+			background: #000
+	&--header
+		padding: 1.3em 2.5em
+
+
+
+.paragraph
+	color: #767676
+	line-height: 2.2rem
+	&--main
+	
+		font-size: 1.3rem
+		max-width: 34em
+		color: rgba(0,0,0,.5)
+		margin: 3rem auto 4rem auto
+		transition: opacity 700ms 400ms cubic-bezier(.694,0,.335,1),color 300ms cubic-bezier(.694,0,.335,1),transform 700ms 400ms cubic-bezier(.694,0,.335,1),-webkit-transform 700ms 400ms cubic-bezier(.694,0,.335,1)
+	&--subtitle
+		color: rgba(0,0,0,.5)
+		font-weight: 500
+		letter-spacing: .33333333em
+		font-size: .9rem
+	&-slide
+		font-weight: 300
+		font-size: 1.4rem
+	&--section
+		font-weight: 300
+		font-size: 1.4rem
+		&.is--left
+			padding-right: 5rem
+
+
+		
+.title
+	color: #222
+	&--main
+		background-image: $gradienth1black
+		background-position: 50% center
+		position: relative
+		background-size: 500% auto
+		font-size: 5.5rem
+		font-weight: 400
+		background-clip: text
+		text-rendering: geometricPrecision
+		text-fill-color: #000
+		transition: background-position 1250ms 1250ms linear,visibility 0ms 1250ms linear,opacity 0ms 1250ms linear
+		color: #000
+		// &
+	&-slide
+		font-size: 1.7rem
+		letter-spacing: .21428571rem
+		font-weight: 500
+		text-transform: uppercase
+	&-popup
+		font-size: 2.6rem
+		color: #fff
+		text-align: center
+	&--section
+		letter-spacing: .21428571rem
+		font-weight: 500
+		text-transform: uppercase
+		font-size: 1.7rem
+	&--side
+		margin: 2rem 0
+		padding-right: 5rem
+		line-height: 1.63636364em
+		font-size: 2.2rem
+		letter-spacing: .20454545em
+		
+
+
+.swiper
+	&-container
+		&-horizontal
+			& > .swiper
+				&-pagination
+					&-bullets
+						bottom: 6.5rem
+						& .swiper
+							&-pagination
+								&-bullet
+
+									box-sizing: content-box
+									background-clip: content-box
+									border-radius: 0
+									outline: none
+									width: 3rem
+									padding: 1.5rem 0
+									height: .1rem
+									margin: 0 .5rem
+									background-color: rgba(255,255,255, .2)
+									position: relative
+									opacity: 1
+									& .line
+										display: block
+										height: 100%
+										background-color: transparent
+										transition: $time
+									&:hover
+										& .line
+											background-color: #cbcbcb
+									&-active
+										background-color: rgba(255,255,255, .2)
+										& .line
+											background: #fff
+											width: 100%
+											animation: progress 10000ms 1 linear
+
+.fancybox
+	&-is-open
+		& .fancybox-bg
+			background: rgba(0,0,0,1)
+			opacity: .85
+	&-button
+		outline: none
+		transition: opacity 400ms cubic-bezier(.694,0,.335,1),transform 400ms cubic-bezier(.694,0,.335,1),-webkit-transform 400ms cubic-bezier(.694,0,.335,1)
+		&--close
+			position: absolute
+			outline: none
+			top: 3rem
+			right: 3rem
+			width: 3rem
+			height: 3rem
+			padding: 0
+			opacity: .75
+			background: none
+			transform: scale(.75)
+			&:hover
+				opacity: 1
+				background: none
+				transform: scale(1)
+		& svg
+			outline: none
+			margin-right: 0
+			display: block
+			width: 100%
+			height: 100%
+			stroke: none
+			& line
+				stroke: #fff
+				fill: none
+
+.team
+	padding: 10rem 0
+	& .container
+		&-fluid
+			padding: 0
+			& .team
+				&__slider
+					width: 100%
+					&--description
+						padding-top: 2rem
+						& p
+							padding-top: 1rem
+					&--content
+						position: relative
+					&--bg
+						overflow: hidden
+						width: 100%
+						height: 100%
+						& img
+							width: 100%
+							height: 100%
+							object-fit: cover
+							transition: opacity 300ms cubic-bezier(.694,0,.335,1), transform 700ms cubic-bezier(.694,0,.335,1), transform 700ms cubic-bezier(.694,0,.335,1)
+					&--slide
+						cursor: pointer
+						&:hover
+							& img
+								transform: scale(1.08)
+							& .team
+								&__slider
+									&--direct
+										opacity: 1
+										background: rgba(0,0,0, .4)
+
+					&--direct
+						opacity: 0
+						position: absolute
+						top: 0
+						left: 0
+						width: 100%
+						height: 100%
+						display: flex
+						flex-direction: row
+						align-items: center
+						justify-content: center
+						background: transparent
+						transition: $time
+
+
+
+.main
+	width: 100%
+	height: 100vh
+	min-height: 75rem
+	& .container-fluid
+		padding: 0
+		height: 100%
+		& .row
+			height: 100%
+	&__content
+		width: 100%
+		height: 100%
+		position: relative
+		z-index: 3
+		display: flex
+		align-items: center
+		flex-direction: row
+		justify-content: center
+		&--sub
+			position: relative
+			z-index: 3
+
+	&__slider
+		position: absolute
+		z-index: 2
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		&--slide
+			width: 100%
+			height: 100%
+			& img
+				width: 	100%
+				height: 100%
+				object-fit: cover
+
+.footer
+	border-top: .1rem solid rgba(0,0,0,.1)
+	& .container-fluid
+		width: 85%
+		max-width: 153rem
+		padding: 11rem 0 14rem 0
+	&__nav
+		&--title
+			font-size: 1.2rem
+			margin-bottom: 2.2rem
+			letter-spacing: .21428571em
+			font-weight: 500
+			text-transform: uppercase
+		&--list
+			list-style: none
+		&--item
+			margin-bottom: .7rem
+			&:last-child
+				margin-bottom: 0
+
+
+.no-gutters
+	margin-right: 0
+	margin-left: 0
+	> .col, > [class*="col-"] 
+		padding-right: 0
+		padding-left: 0
+
+
+
+
+.drop
+	& .fancybox
+		&-content
+			padding: 0
+			max-width: 60rem
+			width: 100%
+			background: transparent
+			& .list
+				&__currency
+					margin-top: 2.2rem
+					margin-bottom: 0
+					list-style: none
+					text-align: center
+					&--item
+						line-height: 4.5rem
+					&--link
+						display: inline-block
+						position: relative
+						font-size: 2rem
+						font-weight: 300
+						text-decoration: uppercase
+						color: #fff
+						&:after
+							position: absolute
+							bottom: .4rem
+							left: 0
+							width: 100%
+							height: .1rem
+							content: ''
+							background: #fff
+							transform-origin: left center
+							transform: scale3d(0,1,1)
+							transition: transform 300ms cubic-bezier(.694,0,.335,1)
+						& .symbol
+							color: #fff
+						& .code
+							transition: opacity 300ms cubic-bezier(.694,0,.335,1)
+							opacity: .6
+						&:hover
+							& .code
+								opacity: 1
+							&:after
+								transform: scale3d(1,1,1)
+						&.active
+							& .code
+								opacity: 1
+							&:after
+								transform: scale3d(1,1,1)
+		
+
+.hero
+	padding-top: 14rem
+	.container-fluid
+		padding: 0 8vw
+
+
+
+.desing, .marketing
+	padding-bottom: 18rem
+	.container-fluid
+		padding: 0 8vw
+	&__nav
+		position: absolute
+		bottom: 0
+		right: 0
+		&-link
+			box-sizing: content-box
+			border: none
+			outline: none
+			width: 2.5rem
+			height: 2.5rem
+			background: transparent
+			padding: 2rem .5rem 2rem 0
+			& + &
+				padding-left: .5rem
+				padding-right: 0
+			svg
+				fill: none
+				display: block
+				width: 100%
+				height: 100%
+				stroke-width: .4rem
+				stroke: rgba(0,0,0,.6)
+				transition: stroke 100ms cubic-bezier(.694,0,.335,1)
+			&:hover
+				svg
+					stroke: #000
+
+	&__bg
+		max-width: 27vw
+		margin-left: 0
+		width: 100%
+		height: 100%
+		&-slide
+			width: 100%
+			height: 100%
+			& img
+				width: 100%
+				height: 100%
+				object-fit: cover
+	&__sliders
+		position: relative
+	&__slider
+		max-width: 38vw
+		width: 100%
+		position: absolute
+		top: 50%
+		box-shadow: 0 1.8vw 4vw -0.7vw rgba(0,0,0,.2)
+		margin: auto
+		// bottom: 0
+		transform: translateY(-50%)
+		right: 0
+		// left: 0
+		&-content
+			position: relative
+			width: 100%
+		&-direct
+			opacity: 0
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			display: flex
+			flex-direction: row
+			align-items: center
+			justify-content: center
+			background: transparent
+			transition: $time
+				
+		&-photo
+			overflow: hidden
+			width: 100%
+			height: 100%
+			& img
+				width: 100%
+				height: 100%
+				object-fit: cover
+				transition: opacity 300ms cubic-bezier(.694,0,.335,1), transform 700ms cubic-bezier(.694,0,.335,1), transform 700ms cubic-bezier(.694,0,.335,1)
+
+		&-slide
+			cursor: pointer
+			width: 100%
+			height: 100%
+
+			&:hover
+				& img
+					transform: scale(1.08)
+				& .desing
+					&__slider
+						&-direct
+							opacity: 1
+							background: rgba(0,0,0, .4)
+		
+
+.btns
+	margin-top: 4rem
+	& .btn
+		// & + &
+			// margin-left: 3.6rem
+
+
+.header
+	top: 0
+	left: 0
+	width: 100%
+	padding: 2rem 0
+	z-index: 9
+	transition: transform 300ms cubic-bezier(.694,0,.335,1),visibility 300ms step-end
+	.container-fluid
+		padding: 0 8vw
+	&__divider
+		width: .1rem
+		height: 1.5em
+		transition: background-color 300ms cubic-bezier(.694,0,.335,1)
+		background-color: rgba(0,0,0,.3)
+	&.is
+		&--white
+			z-index: 99
+			visibility: hidden
+			transform: translate3d(0,-100%,0)
+			background: #fff
+			box-shadow: 0 0 10px rgba(0,0,0,.05)
+		&--active
+			transition: transform 300ms cubic-bezier(.694,0,.335,1), visibility 300ms step-start
+			transform: none
+			visibility: visible
+
+.position
+	&-absolute
+		position: absolute
+	&-fixed
+		position: fixed
+		
+		
+.note
+	opacity: .6
+	transition: color 300ms cubic-bezier(.694,0,.335,1)
+	font-weight: 300
+	margin-top: 2rem
+	color: #000
+	font-size: 1.3rem
+
+
+.dropdown
+	&__tour
+		display: none
+		z-index: 10
+		position: absolute
+		top: 100%
+		left: 0
+		background: #fff
+		&-list
+			list-style: none
