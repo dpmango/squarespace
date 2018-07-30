@@ -1,4 +1,9 @@
 $(document).ready(function($) {
+
+// setInterval(function() {
+//   // Todo...
+// }, 700)
+
  
 var teamSlider = new Swiper('.team__slider', {
     speed: 1000,
@@ -113,12 +118,6 @@ $('.link-dropdown').click(function(event) {
 });
 
 
-
-$('.is--dropdown').click(function(event) {
-  /* Act on the event */
-
-  event.preventDefault();
-});
 
 
 $('.dropdown').hover(function() {
