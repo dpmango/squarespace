@@ -55,6 +55,21 @@ var mainSlider = new Swiper('.main__slider', {
     effect: 'fade',
     grabCursor: true,
      spaceBetween: 0,
+     on: {
+    slideChange: function () {
+      indexSlide = this.realIndex
+      slide = this.slides[indexSlide]
+      textLink = $(slide).data('link')
+      $('.link--change').text(textLink)
+      $('.link--change').addClass('is--active')
+      if ($(slide).data('bg') != 'black') {
+
+        $('.main__content, .header:not(.is--white)').addClass('is--black')
+      } else {
+        $('.main__content, .header:not(.is--white)').removeClass('is--black')
+      }
+    },
+  },
      autoplay: {
     delay: 10000,
   },
@@ -64,7 +79,7 @@ var mainSlider = new Swiper('.main__slider', {
     el: '.swiper-pagination',
     // type: 'custom',
     renderBullet: function (index, className) {
-    return '<span class="'+className+'"><span class="line"></span></span>';
+      return '<span class="'+className+'"><span class="line"></span></span>';
   } 
   },
   
@@ -99,16 +114,38 @@ $('.link-dropdown').click(function(event) {
 
 
 
+$('.is--dropdown').click(function(event) {
+  /* Act on the event */
 
+  event.preventDefault();
+});
+
+
+$('.dropdown').hover(function() {
+  menu = $(this).find('.is--active[data-menu]')
+  dropdown = $(this).find('.dropdown__menu[data-drop='+menu.data('menu')+']')
+  console.log(menu.data('menu'))
+
+  $(dropdown).addClass('is--active')
+
+}, function() {
+
+  $(dropdown).removeClass('is--active')
+});
+
+var height = $(window).scrollTop();
+if(height > 150){
+  $('.header.is--white').addClass('is--active');
+}
 
 });
 
 
 $(window).scroll(function() {
 		var height = $(window).scrollTop();
-if(height > 100){
-$('.header.is--white').addClass('is--active');
-} else{
-$('.header.is--white').removeClass('is--active');
-}
+      if(height > 150){
+        $('.header.is--white').addClass('is--active');
+      } else{
+        $('.header.is--white').removeClass('is--active');
+      }
 });
