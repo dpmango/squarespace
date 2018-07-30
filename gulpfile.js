@@ -9,16 +9,7 @@ var gulp       = require('gulp'), // Подключаем Gulp
     imagemin     = require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
     pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
     cache        = require('gulp-cache'), // Подключаем библиотеку кеширования
-    autoprefixer = require('gulp-autoprefixer'),// Подключаем библиотеку для автоматического добавления префиксов
-    surge = require('gulp-surge');
-
-gulp.task('deploy', [], function () {
-  return surge({
-    project: './app/',         // Path to your static build directory
-    domain: 'example.surge.sh'  // Your domain or Surge subdomain
-  })
-})
-
+    autoprefixer = require('gulp-autoprefixer')// Подключаем библиотеку для автоматического добавления префиксов
 
 gulp.task('sass', function(){ // Создаем таск Sass
     return gulp.src(['app/sass/**/*.sass', 'app/sass/**/*.scss']) // Берем источник
@@ -41,7 +32,7 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 
 gulp.task('scripts', function() {
     return gulp.src([ // Берем все необходимые библиотеки
-        'app/libs/jquery/dist/jquery.min.js', 
+        'app/libs/jquery/dist/jquery.min.js',
         'app/libs/tether/dist/js/tether.min.js',// Берем jQuery
         'app/libs/bootstrap/dist/js/bootstrap.min.js',
         'app/libs/swiper/dist/js/swiper.min.js',

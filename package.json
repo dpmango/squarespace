@@ -4,7 +4,8 @@
   "description": "squarespace dev",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "surge": "gulp build --production && surge --project ./dist --domain squarespace-cc.surge.sh"
   },
   "author": "Oleh Kuzhel",
   "license": "ISC",
