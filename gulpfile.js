@@ -42,6 +42,7 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 gulp.task('scripts', function() {
     return gulp.src([ // Берем все необходимые библиотеки
         'app/libs/jquery/dist/jquery.min.js', 
+        'app/libs/webfontloader/webfontloader.js',
         'app/libs/tether/dist/js/tether.min.js',// Берем jQuery
         'app/libs/bootstrap/dist/js/bootstrap.min.js',
         'app/libs/swiper/dist/js/swiper.min.js',
