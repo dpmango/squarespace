@@ -186,11 +186,11 @@ $(document).ready(function($) {
 });
 
 
-$(window).scroll(function() {
+$(window).on('scroll', throttle(function() {
   var height = $(window).scrollTop();
   if (height > 150) {
     $('.header.is--white').addClass('is--active');
   } else {
     $('.header.is--white').removeClass('is--active');
   }
-});
+}, 20));
