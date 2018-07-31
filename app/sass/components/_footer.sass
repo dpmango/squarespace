@@ -1,0 +1,33 @@
+
+.footer
+	border-top: .1rem solid rgba(0,0,0,.1)
+	& .container-fluid
+		width: 85%
+		max-width: 153rem
+		padding: 11rem 0 14rem 0
+		@media (max-width: 991.98px)
+			padding: 5rem 0 5rem 0
+	&__nav
+		flex: 1
+		@media (max-width: 767.98px)
+			padding: 2.3rem 0 0 0
+			border-bottom: .1rem solid #ccc
+		&--title
+			font-size: 1.2rem
+			margin-bottom: 2.2rem
+			letter-spacing: .21428571em
+			font-weight: 500
+			text-transform: uppercase
+			@media (max-width: 767.98px)
+				font-size: 1.6rem
+				&.active
+					.arrow-down
+						transform: rotate(180deg)
+		&--list
+			list-style: none
+			@media (max-width: 767.98px)
+				display: none
+		&--item
+			margin-bottom: .7rem
+			&:last-child
+				margin-bottom: 0

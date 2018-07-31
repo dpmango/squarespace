@@ -1,0 +1,49 @@
+
+.team
+	@media (max-width: 991.98px)
+		padding: 5rem 0 5rem 0
+	& .container
+		&-fluid
+			padding: 0
+			& .team
+				&__slider
+					width: 100%
+					&--description
+						padding-top: 2rem
+						& p
+							padding-top: 1rem
+					&--content
+						position: relative
+					&--bg
+						overflow: hidden
+						width: 100%
+						height: 100%
+						& img
+							width: 100%
+							height: 100%
+							object-fit: cover
+							transition: opacity 300ms cubic-bezier(.694,0,.335,1), transform 700ms cubic-bezier(.694,0,.335,1), transform 700ms cubic-bezier(.694,0,.335,1)
+					&--slide
+						cursor: pointer
+						&:hover
+							& img
+								transform: scale(1.08)
+							& .team
+								&__slider
+									&--direct
+										opacity: 1
+										background: rgba(0,0,0, .4)
+
+					&--direct
+						opacity: 0
+						position: absolute
+						top: 0
+						left: 0
+						width: 100%
+						height: 100%
+						display: flex
+						flex-direction: row
+						align-items: center
+						justify-content: center
+						background: transparent
+						transition: $time

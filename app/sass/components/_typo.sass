@@ -1,0 +1,83 @@
+
+.paragraph
+	color: #767676
+	line-height: 2em
+	&--main
+
+		font-size: 1.3rem
+		max-width: 34em
+		color: rgba(0,0,0,.5)
+		margin: 3rem auto 4rem auto
+		transition: opacity 700ms 400ms cubic-bezier(.694,0,.335,1),color 300ms cubic-bezier(.694,0,.335,1),transform 700ms 400ms cubic-bezier(.694,0,.335,1),-webkit-transform 700ms 400ms cubic-bezier(.694,0,.335,1)
+		@media (max-width: 767.98px)
+			padding: 0 8vw
+	&--subtitle
+		color: rgba(0,0,0,.5)
+		font-weight: 500
+		letter-spacing: .33333333em
+		font-size: .9rem
+	&-slide
+		font-weight: 300
+		font-size: 1.4rem
+	&--section
+		font-weight: 300
+		font-size: 1.4rem
+		&.is--left
+			padding-right: 8rem
+
+			@media (max-width: 1139.98px)
+				padding-right: 0
+			@media (max-width: 991.98px)
+				padding-right: 0
+		& .text-link
+			color: #222
+			border-bottom: .1rem solid rgba(0,0,0,.3)
+
+
+
+.title
+	color: #222
+	&--main
+		background-image: $gradienth1black
+		background-position: 50% center
+		position: relative
+		background-size: 500% auto
+		font-size: 5.5rem
+		font-weight: 400
+		-webkit-background-clip: text
+		background-clip: text
+		text-rendering: geometricPrecision
+		text-fill-color: #000
+		transition: background-position 1250ms 1250ms linear,visibility 0ms 1250ms linear,opacity 0ms 1250ms linear
+		color: #000
+		@media (max-width: 991.98px)
+			font-size: 4rem
+		@media (max-width: 767.98px)
+			font-size: 3rem
+			max-width: 80%
+			margin: 0 auto
+
+
+		// &
+	&-slide
+		font-size: 1.7rem
+		letter-spacing: .21428571rem
+		font-weight: 500
+		text-transform: uppercase
+	&-popup
+		font-size: 2.6rem
+		color: #fff
+		text-align: center
+	&--section
+		letter-spacing: .21428571rem
+		font-weight: 500
+		text-transform: uppercase
+		font-size: 1.7rem
+	&--side
+		margin: 2rem 0
+		padding-right: 5rem
+		line-height: 1.63636364em
+		font-size: 2.2rem
+		letter-spacing: .20454545em
+		@media (max-width: 991.98px)
+			padding-right: 0

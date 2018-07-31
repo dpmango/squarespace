@@ -1,0 +1,39 @@
+
+.header
+	top: 0
+	left: 0
+	width: 100%
+	padding: 2rem 0
+	z-index: 9
+	transition: transform 300ms cubic-bezier(.694,0,.335,1),visibility 300ms step-end
+
+	.container-fluid
+		padding: 0 8vw
+	&.is--black
+		& .link
+			color: #fff
+			& .svg-caret-down
+				stroke: #fff
+		& svg
+			stroke: #fff
+		& .btn
+			color: #000
+			background: #fff
+		& .header__divider
+			background: #fff
+	&__divider
+		width: .1rem
+		height: 1.5em
+		transition: background-color 300ms cubic-bezier(.694,0,.335,1)
+		background-color: rgba(0,0,0,.3)
+	&.is
+		&--white
+			z-index: 99
+			visibility: hidden
+			transform: translate3d(0,-100%,0)
+			background: #fff
+			box-shadow: 0 0 10px rgba(0,0,0,.05)
+		&--active
+			transition: transform 300ms cubic-bezier(.694,0,.335,1), visibility 300ms step-start
+			transform: none
+			visibility: visible
