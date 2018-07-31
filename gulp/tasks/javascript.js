@@ -29,7 +29,7 @@ gulp.task('javascript:app', function() {
       config.src.js + '/*.js'
      ])
     .pipe(plumber({ errorHandler: config.errorHandler }))
-    .pipe(concat('app.js'))
+    .pipe(concat('main.js'))
     .pipe(config.production ? uglifyJs() : util.noop())
     .pipe(gulp.dest(config.dest.js));
 });
