@@ -4,6 +4,13 @@ $(document).ready(function($) {
 //   // Todo...
 // }, 700)
 
+WebFont
+.load({
+    google: {
+      families: ['Roboto:100,300,400,500,700,900'],
+    }
+  })
+
  
 var teamSlider = new Swiper('.team__slider', {
     speed: 1000,
@@ -15,6 +22,22 @@ var teamSlider = new Swiper('.team__slider', {
   autoplay: {
     delay: 3000,
   },
+  breakpoints: {
+    // when window width is <= 320px
+    767: {
+      slidesPerView: 1.2,
+      spaceBetween: 20
+    },
+    998: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    // when window width is <= 640px
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 20
+    }
+  }
 });
 
 var bgSlider = new Swiper('.desing__bg', {
@@ -40,6 +63,18 @@ var desingSlider = new Swiper('.desing__slider', {
   },
   autoplay: {
     delay: 3000,
+  },
+  breakpoints: {
+    // when window width is <= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 10
+    },
+    // when window width is <= 480px
+    768: {
+      navigation: false
+      // spaceBetween: 10
+    },
   },
   on: {
     slideChange: function () {
@@ -90,7 +125,7 @@ var mainSlider = new Swiper('.main__slider', {
   
 });
 
-$('.link-dropdown').click(function(event) {
+$('.link--dropdown').click(function(event) {
 	popup = $(this).attr('href')
 	// console.log(popup)
 	$.fancybox.open({
@@ -118,10 +153,13 @@ $('.link-dropdown').click(function(event) {
 });
 
 
+$('.dropdown').click(function(event) {
+  return false
+});
 
 
 $('.dropdown').hover(function() {
-  menu = $(this).find('.is--active[data-menu]')
+  menu = $(this).find('.is--active:not(:hidden)')
   dropdown = $(this).find('.dropdown__menu[data-drop='+menu.data('menu')+']')
   console.log(menu.data('menu'))
 
@@ -136,6 +174,15 @@ var height = $(window).scrollTop();
 if(height > 150){
   $('.header.is--white').addClass('is--active');
 }
+
+$('.footer__nav--title').click(function(event) {
+    $(this).toggleClass('active')
+    list = $(this).parent().find('.footer__nav--list')
+    if (!$('.arrow-down').is(':hidden')) {
+      list.slideToggle()
+    }
+});
+
 
 });
 
