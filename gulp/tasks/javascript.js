@@ -8,14 +8,14 @@ var config      = require('../config');
 
 gulp.task('javascript:vendor', function() {
   return gulp.src([
-      'app/libs/jquery/dist/jquery.min.js',
-      'app/libs/webfontloader/webfontloader.js',
-      'app/libs/svg4everybody/dist/svg4everybody.min.js',
-      'app/libs/viewport-units-buggyfill/viewport-units-buggyfill.js',
-      'app/libs/tether/dist/js/tether.min.js',
-      'app/libs/bootstrap/dist/js/bootstrap.min.js',
-      'app/libs/swiper/dist/js/swiper.min.js',
-      'app/libs/fancybox/dist/jquery.fancybox.min.js',
+      'src/libs/jquery/dist/jquery.min.js',
+      'src/libs/webfontloader/webfontloader.js',
+      'src/libs/svg4everybody/dist/svg4everybody.min.js',
+      'src/libs/viewport-units-buggyfill/viewport-units-buggyfill.js',
+      'src/libs/tether/dist/js/tether.min.js',
+      'src/libs/bootstrap/dist/js/bootstrap.min.js',
+      'src/libs/swiper/dist/js/swiper.min.js',
+      'src/libs/fancybox/dist/jquery.fancybox.min.js',
       config.src.js + '/vendor/**/*.js'
      ])
     .pipe(plumber({ errorHandler: config.errorHandler }))
