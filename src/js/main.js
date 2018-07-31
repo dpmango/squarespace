@@ -222,15 +222,12 @@ $(document).ready(function($) {
     });
 
   // DROPDOWN HOVER
+  var dropdown;
   $('.dropdown').hover(function() {
-    menu = $(this).find('.is--active:not(:hidden)')
+    var menu = $(this).find('.is--active:not(:hidden)')
     dropdown = $(this).find('.dropdown__menu[data-drop=' + menu.data('menu') + ']')
-    console.log(menu.data('menu'))
-
     $(dropdown).addClass('is--active')
-
   }, function() {
-
     $(dropdown).removeClass('is--active')
   });
 
