@@ -62,6 +62,7 @@ body
 	background-color: #fff
 	color: #222
 	width: 100%
+	min-width: 32rem
 	position: relative
 	// overflow: hidden
 	-webkit-tap-highlight-color: rgba(0,0,0,0)
@@ -281,6 +282,10 @@ section,footer,header
 .paragraph
 	color: #767676
 	line-height: 2em
+	@media (max-width: 991.98px)
+		// padding: 0 8vw
+		max-width: 48rem
+		margin: 0 auto
 	&--main
 	
 		font-size: 1.3rem
@@ -293,6 +298,7 @@ section,footer,header
 	&--subtitle
 		color: rgba(0,0,0,.5)
 		font-weight: 500
+		text-transform: uppercase
 		letter-spacing: .33333333em
 		font-size: .9rem
 	&-slide
@@ -315,7 +321,12 @@ section,footer,header
 
 		
 .title
+	display: inline-block
 	color: #222
+	@media (max-width: 991.98px)
+		// padding: 0 8vw
+		max-width: 48rem
+		
 	&--main
 		background-image: $gradienth1black
 		background-position: 50% center
@@ -352,13 +363,15 @@ section,footer,header
 		text-transform: uppercase
 		font-size: 1.7rem
 	&--side
-		margin: 2rem 0
+		margin: 2rem auto
 		padding-right: 5rem
 		line-height: 1.63636364em
 		font-size: 2.2rem
 		letter-spacing: .20454545em
 		@media (max-width: 991.98px)
 			padding-right: 0
+		@media (max-width: 679.98px)
+			font-size: 1.6rem
 		
 
 
@@ -435,7 +448,7 @@ section,footer,header
 
 .team
 	@media (max-width: 991.98px)
-		padding: 5rem 0 5rem 0
+		padding: 10rem 0 10rem 0
 	& .container
 		&-fluid
 			padding: 0
@@ -561,7 +574,7 @@ section,footer,header
 	&__nav
 		flex: 1
 		@media (max-width: 767.98px)
-			padding: 2.3rem 0 0 0
+			padding: 2.4rem 0 0 0
 			border-bottom: .1rem solid #ccc
 		&--title
 			font-size: 1.2rem
@@ -570,7 +583,7 @@ section,footer,header
 			font-weight: 500
 			text-transform: uppercase
 			@media (max-width: 767.98px)
-				font-size: 1.6rem
+				font-size: 1.3rem
 				&.active
 					.arrow-down
 						transform: rotate(180deg)
@@ -647,7 +660,7 @@ section,footer,header
 .hero
 	padding: 14rem 0 9rem 0
 	@media (max-width: 991.98px)
-		padding: 5rem 0 0 0
+		padding: 10rem 0 0 0
 	.container-fluid
 		padding: 0 8vw
 
@@ -657,7 +670,7 @@ section,footer,header
 .desing, .marketing, .support
 	padding: 10rem 0 18rem 0
 	@media (max-width: 991.98px)
-		padding: 0 0 5rem 0
+		padding: 0 0 10rem 0
 	.container-fluid
 		padding: 0 8vw 0 8vw
 	&__nav
@@ -693,7 +706,7 @@ section,footer,header
 		width: 100%
 		height: 100%
 		@media (max-width: 991.98px)
-			margin-left: 20vw
+			margin-left: 15vw
 		@media (max-width: 767.98px)
 			max-width: 50vw
 			margin-left: 0vw
@@ -707,7 +720,7 @@ section,footer,header
 	&__sliders
 		position: relative
 	&__slider
-		max-width: 38vw
+		max-width: 40vw
 		width: 100%
 		position: absolute
 		top: 50%
@@ -740,6 +753,7 @@ section,footer,header
 			transition: $time
 				
 		&-photo
+			font-size: 0
 			overflow: hidden
 			width: 100%
 			height: 100%
@@ -764,6 +778,14 @@ section,footer,header
 							background: rgba(0,0,0, .4)
 		
 
+.desing, .marketing
+	& .container
+		&-fluid
+			@media (min-width: 922.98px ) and (max-width: 1300px)
+				padding-left: 0
+			& .is--left
+				@media (min-width: 922.98px ) and (max-width: 1300px)
+					padding-right: 0
 
 
 .btns
@@ -927,7 +949,7 @@ section,footer,header
 			max-width: 40vw
 			margin-left: 0vw
 	&__front
-		max-width: 40.5vw
+		max-width: 40vw
 		margin-right: 0
 		width: 100%
 		height: 100%
@@ -939,17 +961,19 @@ section,footer,header
 	padding-top: 18rem	
 	padding-bottom: 10rem
 	@media (max-width: 991.98px)
-		padding: 5rem 0 5rem 0
+		padding: 10rem 0 10rem 0
 
 .domain
 	background: #f7f7f7
 	@media (max-width: 991.98px)
-		padding: 0 0 5rem 0
+		padding: 5rem 0 10rem 0
 	.container-fluid
 		padding: 0 8vw 0 8vw
 		& .photo
 			&__front
 				box-shadow: none
+				@media (max-width: 767.98px)
+					max-width: 100%
 
 .support
 	.container-fluid

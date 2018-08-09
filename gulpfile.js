@@ -45,7 +45,7 @@ gulp.task('scripts', function() {
         'app/libs/webfontloader/webfontloader.js',
         'app/libs/tether/dist/js/tether.min.js',// Берем jQuery
         'app/libs/bootstrap/dist/js/bootstrap.min.js',
-        'app/libs/swiper/dist/js/swiper.min.js',
+        'app/libs/swiper/dist/js/swiper.js',
         'app/libs/fancybox/dist/jquery.fancybox.min.js',
         // 'app/libs/intl-tel-input/build/js/intlTelInput.min.js',
         // Берем Magnific Popup

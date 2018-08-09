@@ -24,8 +24,12 @@ var teamSlider = new Swiper('.team__slider', {
   },
   breakpoints: {
     // when window width is <= 320px
-    767: {
-      slidesPerView: 1.2,
+     620: {
+      slidesPerView: 1.5,
+      spaceBetween: 20
+    },
+    768: {
+      slidesPerView: 3.5,
       spaceBetween: 20
     },
     998: {
@@ -46,7 +50,7 @@ var bgSlider = new Swiper('.desing__bg', {
     slidesPerView: 1,
     // centeredSlides: true,
     loop: true,
-     spaceBetween: 0,
+     spaceBetween: 5,
   
 });
 
@@ -56,7 +60,7 @@ var desingSlider = new Swiper('.desing__slider', {
     slidesPerView: 1,
     // centeredSlides: true,
     loop: true,
-     spaceBetween: 0,
+    spaceBetween: 1,
      navigation: {
     		nextEl: '.desing--next',
     		prevEl: '.desing--prev',
